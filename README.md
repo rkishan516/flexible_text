@@ -2,6 +2,22 @@
 
 FlexibleText is a Flutter widget that allows you to seamlessly mix and match rich text segments and widgets within a single text block. Customize your text with different styles and gestures, and insert inline widgets using simple placeholders. This powerful and flexible solution makes it easy to create dynamic, interactive, and visually appealing text in your Flutter applications.
 
+<a href="https://pub.dev/packages/flexible_text" target="_blank">
+    <img src="https://img.shields.io/pub/v/flexible_text.svg?style=for-the-badge&label=pub&logo=dart"/> 
+</a>
+<a href="https://github.com/rkishan516/flexible_text/tree/main/LICENSE" target="_blank">
+  <img src="https://img.shields.io/github/license/rkishan516/flexible_text.svg?style=for-the-badge&color=purple"/> 
+</a>
+<a href="https://github.com/rkishan516/flexible_text/stargazers" target="_blank">
+  <img src="https://img.shields.io/github/stars/rkishan516/flexible_text.svg?style=for-the-badge&label=GitHub Stars&color=gold"/>
+</a>
+<br/>
+<a href="https://pub.dev/packages/flexible_text/score" target="_blank">
+  <img src="https://img.shields.io/pub/likes/flexible_text.svg?style=for-the-badge&color=1e7b34&label=likes&labelColor=black"/>
+  <img src="https://img.shields.io/pub/points/flexible_text?style=for-the-badge&color=0056b3&label=Points&labelColor=black"/>
+  <img src="https://img.shields.io/pub/popularity/flexible_text.svg?style=for-the-badge&color=c05600&label=Popularity&labelColor=black"/>
+</a>
+
 ### Features
 
 - Rich Text Segments: Use different styles and gestures for various parts of your text.
@@ -16,7 +32,7 @@ FlexibleText is a Flutter widget that allows you to seamlessly mix and match ric
 
 ```yaml
 dependencies:
-  flexible_text: ^1.0.0
+  flexible_text: ^latest_version
 ```
 
 Import the Package
