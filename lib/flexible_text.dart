@@ -34,6 +34,7 @@ class FlexibleText extends StatelessWidget {
     this.textAlign,
     this.overflow,
     this.widgets = const [],
+    this.namedWidgets = const {},
     this.widgetAlignment = PlaceholderAlignment.middle,
     this.richTextSeparator = ':',
     this.widgetSeparator = '~',
@@ -62,6 +63,9 @@ class FlexibleText extends StatelessWidget {
 
   /// The list of widgets to be inserted into the text.
   final List<Widget> widgets;
+
+  /// The map of named widgets to be inserted into the text.
+  final Map<String, Widget> namedWidgets;
 
   /// The character used to separate rich text segments.
   final String richTextSeparator;
@@ -147,6 +151,14 @@ class FlexibleText extends StatelessWidget {
             var tmpText = text.substring(i + 1, end);
             blocks.add(
                 _WidgetBlock(text: tmpText, child: widgets[widgetIndex - 1]));
+          } else if (namedWidgets.containsKey(text.substring(i + 1, end))) {
+            var tmpText = text.substring(i + 1, end);
+            blocks.add(
+              _WidgetBlock(
+                text: tmpText,
+                child: namedWidgets[tmpText]!,
+              ),
+            );
           } else {
             blocks.add(_TextBlock(text: text.substring(i, end + 1)));
           }

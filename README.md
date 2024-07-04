@@ -45,10 +45,11 @@ import 'package:flexible_text/flexible_text.dart';
 
 ```dart
 FlexibleText(
-  text: 'Hello :World:~1~',
+  text: 'Hello :World:~1~~star~',
   style: TextStyle(color: Colors.black),
   richStyles: [TextStyle(color: Colors.red)],
   textRecognizers: [TapGestureRecognizer()..onTap = () { print('World tapped'); }],
+  namedWidgets: {'star': Icon(Icons.star)},
   widgets: [Icon(Icons.star)],
 );
 ```
@@ -68,6 +69,7 @@ In this example:
 - overflow: How to handle text overflow.
 - widgetAlignment: The alignment of inline widgets.
 - widgets: A list of widgets to be inserted into the text.
+- namedWidgets: A map of named widgets to be inserted into the text.
 - richTextSeparator: The character used to separate rich text segments.
 - widgetSeparator: The character used to separate widget placeholders.
 
