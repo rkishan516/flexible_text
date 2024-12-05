@@ -1,11 +1,16 @@
-## 0.0.0
+## 1.0.0
 
-- chore: Create package
-
-## 0.0.0+1
-
-- docs: Update README
+* Update default richTextSperator to #
+* fix: Update flutter lints to v5
 
 ## 0.1.0
 
-- feat: Add namedWidgets
+* feat: Add namedWidgets
+
+## 0.0.0+1
+
+* docs: Update README
+
+## 0.0.0
+
+* chore: Create package

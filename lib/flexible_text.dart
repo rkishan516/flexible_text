@@ -1,5 +1,3 @@
-library flexible_text;
-
 import 'package:flutter/gestures.dart';
 import 'package:flutter/widgets.dart';
 
@@ -7,21 +5,21 @@ import 'package:flutter/widgets.dart';
 ///
 /// The `FlexibleText` widget allows you to use placeholders in a text string
 /// to insert rich text segments or widgets. The text is split based on the
-/// `richTextSeparator` and `widgetSeparator` characters, which default to `:`
+/// `richTextSeparator` and `widgetSeparator` characters, which default to `#`
 /// and `~` respectively.
 ///
 /// Example:
 ///
 /// ```dart
 /// FlexibleText(
-///   text: 'Hello :World:~1~',
+///   text: 'Hello #World#~1~',
 ///   style: TextStyle(color: Colors.black),
 ///   richStyles: [TextStyle(color: Colors.red)],
 ///   widgets: [Icon(Icons.star)],
 /// );
 /// ```
 ///
-/// In this example, `:World:` will be styled with `TextStyle(color: Colors.red)`,
+/// In this example, `#World#` will be styled with `TextStyle(color: Colors.red)`,
 /// and `~1~` will be replaced by an `Icon(Icons.star)`.
 class FlexibleText extends StatelessWidget {
   /// Creates a [FlexibleText] widget.
@@ -36,7 +34,7 @@ class FlexibleText extends StatelessWidget {
     this.widgets = const [],
     this.namedWidgets = const {},
     this.widgetAlignment = PlaceholderAlignment.middle,
-    this.richTextSeparator = ':',
+    this.richTextSeparator = '#',
     this.widgetSeparator = '~',
   }) : assert(richTextSeparator.length == 1 && widgetSeparator.length == 1);
 

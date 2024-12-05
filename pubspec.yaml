@@ -1,6 +1,6 @@
 name: flexible_text
 description: Powerful and flexible solution to create dynamic, interactive and customizable text with widgets, allows to write a single text block to show anything you want.
-version: 0.1.0
+version: 1.0.0
 homepage: https://github.com/rkishan516/flexible_text
 repository: https://github.com/rkishan516/flexible_text
 topics: [widgets, flexible, text, styling, rich]
@@ -16,5 +16,5 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
 flutter:

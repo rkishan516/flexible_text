@@ -45,19 +45,24 @@ import 'package:flexible_text/flexible_text.dart';
 
 ```dart
 FlexibleText(
-  text: 'Hello :World:~1~~star~',
+  text: 'Hello #World#~1~~star~',
   style: TextStyle(color: Colors.black),
   richStyles: [TextStyle(color: Colors.red)],
   textRecognizers: [TapGestureRecognizer()..onTap = () { print('World tapped'); }],
-  namedWidgets: {'star': Icon(Icons.star)},
+  namedWidgets: {'star': Icon(Icons.star_border)},
   widgets: [Icon(Icons.star)],
 );
 ```
 
 In this example:
 
-- :World: will be styled with TextStyle(color: Colors.red) and will have a tap gesture.
+- #World# will be styled with TextStyle(color: Colors.red) and will have a tap gesture.
 - \~1\~ will be replaced by an Icon(Icons.star).
+- \~star\~ will be replaced by an Icon(Icons.star_border).
+
+and result to
+
+$${\color{black}Hello \space \color{red}World \space \color{black}★☆}$$
 
 #### Customization Options 🎨
 
