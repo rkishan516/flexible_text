@@ -26,7 +26,7 @@ class FlexibleText extends StatelessWidget {
   const FlexibleText({
     super.key,
     required this.text,
-    required this.style,
+    this.style,
     this.richStyles,
     this.textRecognizers,
     this.textAlign,
@@ -42,7 +42,7 @@ class FlexibleText extends StatelessWidget {
   final String text;
 
   /// The default text style to be applied to the text.
-  final TextStyle style;
+  final TextStyle? style;
 
   /// A list of styles to be applied to rich text segments.
   final List<TextStyle?>? richStyles;
@@ -145,7 +145,7 @@ class FlexibleText extends StatelessWidget {
           currentChunk = currentCheckingCharacter;
         } else {
           var widgetIndex = int.tryParse(text.substring(i + 1, end));
-          if (widgetIndex != null) {
+          if (widgetIndex != null && widgetIndex - 1 < widgets.length) {
             var tmpText = text.substring(i + 1, end);
             blocks.add(
                 _WidgetBlock(text: tmpText, child: widgets[widgetIndex - 1]));

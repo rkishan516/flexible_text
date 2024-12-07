@@ -1,6 +1,12 @@
+## 1.1.0
+
+* test: Add test cases
+* feat: Mark default text style optional
+* docs: Update usage with image
+
 ## 1.0.0
 
-* Update default richTextSperator to #
+* feat: Update default richTextSperator to #
 * fix: Update flutter lints to v5
 
 ## 0.1.0

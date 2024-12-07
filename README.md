@@ -18,6 +18,9 @@ FlexibleText is a Flutter widget that allows you to seamlessly mix and match ric
   <img src="https://img.shields.io/pub/popularity/flexible_text.svg?style=for-the-badge&color=c05600&label=Popularity&labelColor=black"/>
 </a>
 
+![title](assets/usage.webp)
+
+
 ### Features
 
 - Rich Text Segments: Use different styles and gestures for various parts of your text.
@@ -41,28 +44,6 @@ Import the Package
 import 'package:flexible_text/flexible_text.dart';
 ```
 
-#### Usage 📝
-
-```dart
-FlexibleText(
-  text: 'Hello #World#~1~~star~',
-  style: TextStyle(color: Colors.black),
-  richStyles: [TextStyle(color: Colors.red)],
-  textRecognizers: [TapGestureRecognizer()..onTap = () { print('World tapped'); }],
-  namedWidgets: {'star': Icon(Icons.star_border)},
-  widgets: [Icon(Icons.star)],
-);
-```
-
-In this example:
-
-- #World# will be styled with TextStyle(color: Colors.red) and will have a tap gesture.
-- \~1\~ will be replaced by an Icon(Icons.star).
-- \~star\~ will be replaced by an Icon(Icons.star_border).
-
-and result to
-
-$${\color{black}Hello \space \color{red}World \space \color{black}★☆}$$
 
 #### Customization Options 🎨
 
