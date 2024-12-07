@@ -1,3 +1,7 @@
+## 1.1.0+1
+
+* docs: Update usage image link for pub
+
 ## 1.1.0
 
 * test: Add test cases

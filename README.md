@@ -20,7 +20,7 @@ FlexibleText is a Flutter widget that allows you to seamlessly mix and match ric
   <img src="https://img.shields.io/pub/popularity/flexible_text.svg?style=for-the-badge&color=c05600&label=Popularity&labelColor=black"/>
 </a>
 
-![title](assets/usage.webp)
+![title](https://raw.githubusercontent.com/rkishan516/flexible_text/refs/heads/main/assets/usage.webp)
 
 
 ### Features
