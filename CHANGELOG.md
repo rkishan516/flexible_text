@@ -1,3 +1,7 @@
+## 1.1.0+2
+
+* chore: Update homepage link of pub to goflutter
+
 ## 1.1.0+1
 
 * docs: Update usage image link for pub
