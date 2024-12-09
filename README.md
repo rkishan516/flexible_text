@@ -49,17 +49,20 @@ import 'package:flexible_text/flexible_text.dart';
 
 #### Customization Options 🎨
 
-- text: The text to display, with placeholders for rich text and widgets.
-- style: The default text style.
-- richStyles: A list of styles for rich text segments.
-- textRecognizers: A list of gesture recognizers for rich text segments.
-- textAlign: The alignment of the text.
-- overflow: How to handle text overflow.
-- widgetAlignment: The alignment of inline widgets.
-- widgets: A list of widgets to be inserted into the text.
-- namedWidgets: A map of named widgets to be inserted into the text.
-- richTextSeparator: The character used to separate rich text segments.
-- widgetSeparator: The character used to separate widget placeholders.
+| Category      | Option              | Description                                                         |
+|---------------|---------------------|---------------------------------------------------------------------|
+| **Text**      | `text`              | The base text, including placeholders for rich text and widgets.    |
+|               | `style`             | Default styling applied to the text.                                |
+|               | `textAlign`         | Alignment of the text (e.g., left, center, right).                  |
+|               | `overflow`          | Handling of text overflow (e.g., ellipsis, clip, wrap).             |
+| **Rich Text** | `richStyles`        | Styles applied to specific segments of rich text.                   |
+|               | `textRecognizers`   | Gesture recognizers (e.g., tap, long-press) for rich text segments. |
+|               | `richTextSeparator` | Character used to delimit rich text sections within the main text.  |
+| **Widgets**   | `widgets`           | List of widgets embedded in the text.                               |
+|               | `namedWidgets`      | Map of named widgets for insertion into the text.                   |
+|               | `widgetAlignment`   | Alignment of inline widgets within the text flow.                   |
+|               | `widgetSeparator`   | Character used to mark widget placeholder positions in the text.    |
+
 
 ### Contributing 👨
 

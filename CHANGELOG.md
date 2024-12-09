@@ -1,3 +1,7 @@
+## 1.1.0+3
+
+* docs: Update design to table for customization options
+
 ## 1.1.0+2
 
 * chore: Update homepage link of pub to goflutter
