@@ -28,8 +28,11 @@ FlexibleText is a Flutter widget that allows you to seamlessly mix and match ric
 - Rich Text Segments: Use different styles and gestures for various parts of your text.
 - Inline Widgets: Easily insert widgets such as icons, images, or any other widget into your text.
 - Customizable Separators: Define your own separators for rich text and widget placeholders.
-- Text Alignment: Control how the text is aligned horizontally.
-- Overflow Handling: Specify how visual overflow should be managed.
+- Named Rich Styles: Apply styles by name using `#name:text#` syntax for readable, maintainable templates.
+- Style Inheritance: Rich styles automatically merge with the base style, so you only override what changes.
+- Tap Callbacks: Simple `onTapCallbacks` list as a convenience alternative to manual `TapGestureRecognizer` creation.
+- Full Text.rich Support: All standard `Text` properties including `maxLines`, `textDirection`, `textScaler`, `softWrap`, `locale`, `strutStyle`, `semanticsLabel`, and `selectionColor`.
+- Debug Warnings: Helpful debug-mode messages when widget indices are out of bounds or named widgets are missing.
 
 ### Getting Started 🚀
 
@@ -49,19 +52,58 @@ import 'package:flexible_text/flexible_text.dart';
 
 #### Customization Options 🎨
 
-| Category      | Option              | Description                                                         |
-|---------------|---------------------|---------------------------------------------------------------------|
-| **Text**      | `text`              | The base text, including placeholders for rich text and widgets.    |
-|               | `style`             | Default styling applied to the text.                                |
-|               | `textAlign`         | Alignment of the text (e.g., left, center, right).                  |
-|               | `overflow`          | Handling of text overflow (e.g., ellipsis, clip, wrap).             |
-| **Rich Text** | `richStyles`        | Styles applied to specific segments of rich text.                   |
-|               | `textRecognizers`   | Gesture recognizers (e.g., tap, long-press) for rich text segments. |
-|               | `richTextSeparator` | Character used to delimit rich text sections within the main text.  |
-| **Widgets**   | `widgets`           | List of widgets embedded in the text.                               |
-|               | `namedWidgets`      | Map of named widgets for insertion into the text.                   |
-|               | `widgetAlignment`   | Alignment of inline widgets within the text flow.                   |
-|               | `widgetSeparator`   | Character used to mark widget placeholder positions in the text.    |
+| Category       | Option              | Description                                                                   |
+|----------------|---------------------|-------------------------------------------------------------------------------|
+| **Text**       | `text`              | The base text, including placeholders for rich text and widgets.              |
+|                | `style`             | Default styling applied to the text. Rich styles merge on top of this.       |
+|                | `textAlign`         | Alignment of the text (e.g., left, center, right).                            |
+|                | `overflow`          | Handling of text overflow (e.g., ellipsis, clip, wrap).                       |
+|                | `maxLines`          | Maximum number of lines for the text to span.                                 |
+|                | `textDirection`     | Directionality of the text (LTR or RTL).                                      |
+|                | `textScaler`        | Font scaling strategy for accessibility.                                      |
+|                | `strutStyle`        | Strut style for consistent line heights.                                      |
+|                | `locale`            | Locale for font selection when characters render differently.                 |
+|                | `softWrap`          | Whether the text should break at soft line breaks.                            |
+|                | `semanticsLabel`    | Alternative semantics label for accessibility.                                |
+|                | `selectionColor`    | Color for painting the selection highlight.                                   |
+| **Rich Text**  | `richStyles`        | Styles applied to rich text segments by index. Merged with base `style`.     |
+|                | `namedRichStyles`   | Map of named styles; use `#name:text#` syntax in the text.                   |
+|                | `textRecognizers`   | Gesture recognizers (e.g., tap, long-press) for rich text segments.           |
+|                | `onTapCallbacks`    | Simple tap callbacks; auto-wrapped in `TapGestureRecognizer`.                |
+|                | `richTextSeparator` | Character used to delimit rich text sections within the main text.            |
+| **Widgets**    | `widgets`           | List of widgets embedded in the text.                                         |
+|                | `namedWidgets`      | Map of named widgets for insertion into the text.                             |
+|                | `widgetAlignment`   | Alignment of inline widgets within the text flow.                             |
+|                | `widgetSeparator`   | Character used to mark widget placeholder positions in the text.              |
+
+#### Named Rich Styles
+
+Use `#name:text#` syntax to apply styles by name instead of index:
+
+```dart
+FlexibleText(
+  text: 'This is #bold:important# and #link:click here#',
+  style: TextStyle(fontSize: 16),
+  namedRichStyles: {
+    'bold': TextStyle(fontWeight: FontWeight.bold),
+    'link': TextStyle(color: Colors.blue, decoration: TextDecoration.underline),
+  },
+)
+```
+
+#### Tap Callbacks
+
+Use `onTapCallbacks` as a simpler alternative to `textRecognizers`:
+
+```dart
+FlexibleText(
+  text: 'Click #here# or #there#',
+  richStyles: [TextStyle(color: Colors.blue), TextStyle(color: Colors.blue)],
+  onTapCallbacks: [
+    () => print('here tapped'),
+    () => print('there tapped'),
+  ],
+)
 
 
 ### Contributing 👨
